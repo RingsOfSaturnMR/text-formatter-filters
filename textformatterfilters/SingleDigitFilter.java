@@ -12,8 +12,8 @@ import javafx.scene.control.TextFormatter;
 Knowledge that overriding UnaryOperator<TextFormatter.Change>'s 
 apply method is how to implemnt a filter for a TextFormatter
 THANKS to:
-https://gist.github.com/karimsqualli96/f8d4c2995da8e11496ed
 Karim, github user karimsqualli96
+https://github.com/karimsqualli96
 from his gist at
 https://gist.github.com/karimsqualli96
 "DoubleFormattedTextField.java"
