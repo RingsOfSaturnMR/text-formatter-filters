@@ -6,12 +6,25 @@
 package textformatterfilters;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+/*
+Knowledge that overriding UnaryOperator<TextFormatter.Change>'s 
+apply method is how to implemnt a filter for a TextFormatter
+THANKS to:
+https://gist.github.com/karimsqualli96/f8d4c2995da8e11496ed
+Karim, github user karimsqualli96
+from his gist at
+https://gist.github.com/karimsqualli96
+"DoubleFormattedTextField.java"
+*/
 
 /**
  *
@@ -21,22 +34,27 @@ public class TextFormatterFilters extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        VBox root = new VBox();
         
-        Scene scene = new Scene(root, 300, 250);
+        HBox hBox1=new HBox();
         
-        primaryStage.setTitle("Hello World!");
+        hBox1.setAlignment(Pos.CENTER);
+        hBox1.setSpacing(20);
+        Label filter1Label=new Label("SingleDigitFilter used for textfield: ");
+        TextField txtField1=new TextField();
+        
+        //Add the text formatter with filter with 1 line of code!!
+        txtField1.setTextFormatter(new TextFormatter<>(new SingleDigitFilter()));
+        
+        hBox1.getChildren().addAll(filter1Label, txtField1);
+        
+        root.getChildren().add(hBox1);
+        
+        
+        Scene scene = new Scene(root, 600, 600);
+        
+        primaryStage.setTitle("Text Formatter Filters");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
