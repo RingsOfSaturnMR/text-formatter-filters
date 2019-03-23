@@ -11,3 +11,6 @@ https://github.com/karimsqualli96
 from his gist at
 https://gist.github.com/karimsqualli96
 "DoubleFormattedTextField.java".
+
+One class here is the SingleDigitFilter.
+The other class demo's the SinghleDigitFilter in a simple GUI.
