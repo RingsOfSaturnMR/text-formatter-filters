@@ -10,4 +10,4 @@ Karim, github user karimsqualli96
 https://github.com/karimsqualli96
 from his gist at
 https://gist.github.com/karimsqualli96
-"DoubleFormattedTextField.java"
+"DoubleFormattedTextField.java".
