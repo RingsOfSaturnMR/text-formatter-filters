@@ -37,6 +37,8 @@ public class TextFormatterFilters extends Application {
         
         VBox root = new VBox();
         
+        root.setSpacing(20);
+        
         HBox hBox1=new HBox();
         
         hBox1.setAlignment(Pos.CENTER);
@@ -44,12 +46,21 @@ public class TextFormatterFilters extends Application {
         Label filter1Label=new Label("SingleDigitFilter used for textfield: ");
         TextField txtField1=new TextField();
         
+        HBox hBox2=new HBox();
+        
+        hBox2.setAlignment(Pos.CENTER);
+        hBox2.setSpacing(20);
+        Label filter2Label=new Label("Single1to9Filter used for textfield: ");
+        TextField txtField2=new TextField();
+        
         //Add the text formatter with filter with 1 line of code!!
         txtField1.setTextFormatter(new TextFormatter<>(new SingleDigitFilter()));
+        txtField2.setTextFormatter(new TextFormatter<>(new Single1to9Filter()));
         
         hBox1.getChildren().addAll(filter1Label, txtField1);
+        hBox2.getChildren().addAll(filter2Label, txtField2);
         
-        root.getChildren().add(hBox1);
+        root.getChildren().addAll(hBox1, hBox2);
         
         
         Scene scene = new Scene(root, 600, 600);
